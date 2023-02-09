@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     //return view('welcome');
     return "hola desde la pagina de inicio";
@@ -38,4 +38,19 @@ Route::get('/',function(){
   echo "<a href='".route('contactos')."'> Contactos 4</a><br>";
   echo "<a href='".route('contactos')."'> Contactos 5</a><br>";
 
-});
+});*/
+
+//Route::view('/','home',['nombre'=>'Jorge']);
+Route::view('/','home')->name('home');
+Route::view('/about','about')->name('about');
+Route::view('/portafolio','portafolio')->name('portafolio');
+Route::view('/contact','contact')->name('contact');
+
+/*
+Route::get('/',function(){
+    $nombre = "Jorge";
+   //return view('home')->with('nombre',$nombre);
+   //return view('home')->with(['nombre'=>$nombre]);
+  // return view('home',['nombre'=>$nombre]);
+  return view('home',compact('nombre'));
+})->name('home');*/
