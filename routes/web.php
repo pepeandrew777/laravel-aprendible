@@ -45,9 +45,9 @@ Route::get('/',function(){
 
 
 Route::view('/','home')->name('home');
-Route::view('/about','about')->name('about');
-Route::get('/portafolio',[PortafolioController::class,'index']);
-Route::view('/contact','contact')->name('contact');
+Route::view('/about/{param?}','about')->name('about');
+Route::get('/portafolio',[PortafolioController::class,'index'])->name('portafolio');
+Route::view('/contact','contact')->name('contact')->name('contact');
 
 //Route::resource('projects',PortafolioController::class);
 //Route::resource('projects',PortafolioController::class)->only(['index','show']);
