@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\PortafolioController;
+use App\Http\Controllers\PortafolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +44,14 @@ Route::get('/',function(){
 //Route::view('/','home',['nombre'=>'Jorge']);
 
 
-Route::view('/','home')->name('home');
-Route::view('/about','about')->name('about');
-//Route::get('/portafolio',[PortafolioController::class,'__invoke']);
-Route::view('/contact','contact')->name('contact');
+//Route::view('/','home')->name('home');
+//Route::view('/about','about')->name('about');
+//Route::get('/portafolio',[PortafolioController::class,'index']);
+//Route::view('/contact','contact')->name('contact');
+
+//Route::resource('projects',PortafolioController::class);
+//Route::resource('projects',PortafolioController::class)->only(['index','show']);
+Route::resource('projects',PortafolioController::class)->except(['index','show']);
 
 /*
 Route::get('/',function(){
